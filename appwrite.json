@@ -1,0 +1,186 @@
+{
+    "projectId": "65e8b0a09b06f27687dd",
+    "projectName": "FoodWaste",
+    "collections": [
+        {
+            "$id": "todos",
+            "$createdAt": "",
+            "$updatedAt": "2022-10-20T21:25:50.163+00:00",
+            "$permissions": [
+                "create(\"users\")"
+            ],
+            "databaseId": "default",
+            "name": "Todos",
+            "enabled": true,
+            "documentSecurity": true,
+            "attributes": [
+                {
+                    "key": "content",
+                    "type": "string",
+                    "status": "available",
+                    "required": true,
+                    "array": false,
+                    "size": 65535,
+                    "default": null
+                },
+                {
+                    "key": "isComplete",
+                    "type": "boolean",
+                    "status": "available",
+                    "required": false,
+                    "array": false,
+                    "default": false
+                }
+            ],
+            "indexes": []
+        },
+        {
+            "$id": "users",
+            "$createdAt": "",
+            "$updatedAt": "",
+            "$permissions": [
+                "read(\"*\"), write(\"users\")"
+            ],
+            "databaseId": "default",
+            "name": "Users",
+            "enabled": true,
+            "documentSecurity": true,
+            "attributes": [
+                {
+                    "key": "username",
+                    "type": "string",
+                    "status": "available",
+                    "required": true,
+                    "array": false,
+                    "size": 255,
+                    "default": null
+                },
+                {
+                    "key": "email",
+                    "type": "string",
+                    "status": "available",
+                    "required": true,
+                    "array": false,
+                    "size": 255,
+                    "default": null
+                },
+                {
+                    "key": "password",
+                    "type": "string",
+                    "status": "available",
+                    "required": true,
+                    "array": false,
+                    "size": 255,
+                    "default": null,
+                    "encrypted": true
+                }
+            ],
+            "indexes": []
+        },
+        {
+            "$id": "registrations",
+            "$createdAt": "",
+            "$updatedAt": "",
+            "$permissions": [
+                "create(\"users\")"
+            ],
+            "databaseId": "default",
+            "name": "Registrations",
+            "enabled": true,
+            "documentSecurity": false,
+            "attributes": [
+                {
+                    "key": "userId",
+                    "type": "string",
+                    "status": "available",
+                    "required": true,
+                    "array": false,
+                    "size": 255,
+                    "default": null
+                },
+                {
+                    "key": "registrationTime",
+                    "type": "datetime",
+                    "status": "available",
+                    "required": true,
+                    "array": false,
+                    "default": "CURRENT_TIMESTAMP"
+                }
+            ],
+            "indexes": []
+        },
+        {
+            "$id": "logins",
+            "$createdAt": "",
+            "$updatedAt": "",
+            "$permissions": [
+                "read(\"*\"), write(\"users\")"
+            ],
+            "databaseId": "default",
+            "name": "Logins",
+            "enabled": true,
+            "documentSecurity": false,
+            "attributes": [
+                {
+                    "key": "userId",
+                    "type": "string",
+                    "status": "available",
+                    "required": true,
+                    "array": false,
+                    "size": 255,
+                    "default": null
+                },
+                {
+                    "key": "loginTime",
+                    "type": "datetime",
+                    "status": "available",
+                    "required": true,
+                    "array": false,
+                    "default": "CURRENT_TIMESTAMP"
+                }
+            ],
+            "indexes": []
+        },
+        {
+            "$id": "account_verifications",
+            "$createdAt": "",
+            "$updatedAt": "",
+            "$permissions": [
+                "read(\"*\"), write(\"users\")"
+            ],
+            "databaseId": "default",
+            "name": "AccountVerifications",
+            "enabled": true,
+            "documentSecurity": false,
+            "attributes": [
+                {
+                    "key": "userId",
+                    "type": "string",
+                    "status": "available",
+                    "required": true,
+                    "array": false,
+                    "size": 255,
+                    "default": null
+                },
+                {
+                    "key": "verificationCode",
+                    "type": "string",
+                    "status": "available",
+                    "required": true,
+                    "array": false,
+                    "size": 255,
+                    "default": null
+                },
+                {
+                    "key": "verificationTime",
+                    "type": "datetime",
+                    "status": "available",
+                    "required": false,
+                    "array": false,
+                    "default": "CURRENT_TIMESTAMP"
+                }
+            ],
+            "indexes": []
+        }
+    ]
+}
